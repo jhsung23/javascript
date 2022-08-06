@@ -54,13 +54,13 @@
 // console.log(person);
 // console.log(copy);
 
-// var person1 = {
-//   name: "Lee",
-// };
+var person1 = {
+  name: "Lee",
+};
 
-// var person2 = {
-//   name: "Lee",
-// };
+var person2 = {
+  name: "Lee",
+};
 
-// console.log(person1 === person2);
-// console.log(person1.name === person2.name);
+console.log(person1 === person2);
+console.log(person1.name === person2.name);
