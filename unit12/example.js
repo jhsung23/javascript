@@ -129,5 +129,50 @@ var add2 = (function () {
 
 // console.log(add2(1, 2));
 
-const add = (x, y) => x + y;
-console.log(add(2, 5));
+// const add = (x, y) => x + y;
+// console.log(add(2, 5));
+
+function addd(x, y) {
+  console.log(arguments);
+  // Arguments(3) [2, 5, 10, callee: f, Symbol(Symbol.iterator): f]
+
+  return x + y;
+}
+
+addd(2, 5, 10);
+
+function add(a, b, c) {
+  a = a || 0;
+  b = b || 0;
+  c = c || 0;
+
+  return a + b + c;
+}
+
+console.log(add(1, 2, 3));
+console.log(add(1, 2));
+console.log(add(1));
+console.log(add());
+
+function add(a = 0, b = 0, c = 0) {
+  return a + b + c;
+}
+
+console.log(add(1, 2, 3));
+console.log(add(1, 2));
+console.log(add(1));
+console.log(add());
+
+$.ajax({
+  method: "POST",
+  url: "/user",
+  data: { id: 1, name: "Lee" },
+  cache: false,
+});
+
+function multiply(x, y) {
+  return x * y;
+}
+
+var result = multiply(3, 5);
+console.log(result);
