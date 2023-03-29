@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <pre></pre>
+    <script>
+      // XMLHttpRequest 객체 생성
+      const xhr = new XMLHttpRequest();
+
+      // HTTP 요청 초기화 - id가 4인 todo의 리소스 교체(교체 대상에서 id는 제외함)
+      xhr.open('PUT', '/todos/4');
+
+      // 요청 body에 담아 서버로 전송할 페이로드의 MIME 타입 지정
+      xhr.setRequestHeader('content-type', 'application/json');
+
+      // HTTP 요청 전송 - 기존 todo의 내용을 교체하기 위해 페이로드 전송 필요
+      xhr.send(JSON.stringify({ id: 4, content: 'React', completed: true }));
+
+      // HTTP 요청이 성공적으로 완료됐다면 실행할 이벤트
+      xhr.onload = () => {
+        if (xhr.status === 200) {
+          document.querySelector('pre').textContent = xhr.response;
+        } else {
+          console.error('Error', xhr.status, xhr.statusText);
+        }
+      };
+    </script>
+  </body>
+</html>
